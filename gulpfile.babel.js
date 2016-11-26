@@ -117,6 +117,7 @@ gulp.task('serve', ['jekyll-build'], () => {
   gulp.watch([
     'css/**/*.css',
     'scripts/**/*.js',
+    'lists/**/*.html',
     '_includes/**/*.html',
     '_layouts/**/*.html',
     '_posts/**/*.md',

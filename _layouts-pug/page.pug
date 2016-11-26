@@ -1,8 +1,11 @@
-| ---
-| layout: default
-| ---
-.post
-  header.post-header
-    h1.post-title {{ page.title }}
-  article.post-content
-    | {{ content }}
+doctype html
+html
+  | {% include head.html %}
+  body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      | {% include header.html %}
+
+      main.mdl-layout__content
+        .page-content
+          | {{ content }}
+        | {% include footer.html %}
