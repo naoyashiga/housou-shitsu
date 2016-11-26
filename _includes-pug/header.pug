@@ -1,32 +1,16 @@
 header.mdl-layout__header
   .mdl-layout__header-row
-    // Title
-    h1.mdl-layout-title 放送室まとめ
-  // Tabs
-  .mdl-layout__tab-bar.mdl-js-ripple-effect
-    a.mdl-layout__tab.is-active(href='#scroll-tab-1') ホーム
-    a.mdl-layout__tab(href='#scroll-tab-2') バックナンバー
-    a.mdl-layout__tab(href='#scroll-tab-3') 企画
-  .mdl-layout__drawer
-    span.mdl-layout-title Title
-//- header.mdl-layout__header
-//-   .mdl-layout__header-row
-//-     .mdl-layout-spacer
-//-     .mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right
-//-       label.mdl-button.mdl-js-button.mdl-button--icon(for='fixed-header-drawer-exp')
-//-         i.material-icons search
-//-       .mdl-textfield__expandable-holder
-//-         input#fixed-header-drawer-exp.mdl-textfield__input(type='text', name='sample')
-//- .mdl-layout__drawer
-//-   span.mdl-layout-title 放送室まとめ
-//-   nav.mdl-navigation
-//-     a.mdl-navigation__link(href='') 放送室とは
-//-     a.mdl-navigation__link(href='') バックナンバー
-//-     a.mdl-navigation__link(href='') 特別企画
-    // Your content goes here
-
-      //- | {% for page in site.pages %}
-      //- | {% if page.title %}
-      //- a.page-link(href='{{ page.url | prepend: site.baseurl }}') {{ page.title }}
-      //- |           {% endif %}
-      //- |         {% endfor %}
+    span.mdl-layout-title 放送室まとめ
+    .mdl-layout-spacer
+    nav.mdl-navigation.mdl-layout--large-screen-only
+      a.mdl-navigation__link(href='archive.html') 放送リスト
+      a.mdl-navigation__link(href='') 企画
+      a.mdl-navigation__link(href='') Link
+      a.mdl-navigation__link(href='') Link
+.mdl-layout__drawer
+  span.mdl-layout-title Title
+  nav.mdl-navigation
+    a.mdl-navigation__link(href='') Link
+    a.mdl-navigation__link(href='') Link
+    a.mdl-navigation__link(href='') Link
+    a.mdl-navigation__link(href='') Link
