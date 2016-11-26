@@ -1,0 +1,29 @@
+doctype html
+html
+  | {% include head.html %}
+  body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      | {% include header.html %}
+      main.mdl-layout__content
+        section#scroll-tab-1.mdl-layout__tab-panel.is-active
+          .page-content
+            .mdl-grid
+              | {{ content }}
+        section#scroll-tab-2.mdl-layout__tab-panel
+          .page-content
+            p あああ
+        section#scroll-tab-3.mdl-layout__tab-panel
+          .page-content
+            // Your content goes here
+        //- .page-content
+        //-   .mdl-grid
+        //-     .mdl-cell.mdl-cell--12-col
+        //-       | {{ content }}
+        | {% include footer.html %}
+    //- link(async='', href='{{ ', scripts='', |='', prepend:='', site.baseurl='')
+    //- script.
+    //-   if ('serviceWorker' in navigator) {
+    //-   navigator.serviceWorker.register("{{ "/sw.js" | prepend: site.baseurl }}").then(function() {
+    //-   console.log("Service Worker Registered");
+    //-   });
+    //-   }

@@ -1,23 +1,10 @@
 
 <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp"><i class="material-icons">search</i></label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" id="fixed-header-drawer-exp" type="text" name="sample"/>
-      </div>
-    </div>
+    <!-- Title-->
+    <h1 class="mdl-layout-title">放送室まとめ</h1>
   </div>
+  <!-- Tabs-->
+  <div class="mdl-layout__tab-bar mdl-js-ripple-effect"><a class="mdl-layout__tab is-active" href="#scroll-tab-1">ホーム</a><a class="mdl-layout__tab" href="#scroll-tab-2">バックナンバー</a><a class="mdl-layout__tab" href="#scroll-tab-3">企画</a></div>
+  <div class="mdl-layout__drawer"><span class="mdl-layout-title">Title</span></div>
 </header>
-<div class="mdl-layout__drawer"><span class="mdl-layout-title">放送室まとめ</span>
-  <nav class="mdl-navigation"><a class="mdl-navigation__link" href="">放送室とは</a><a class="mdl-navigation__link" href="">バックナンバー</a><a class="mdl-navigation__link" href="">特別企画</a>
-    <!-- Your content goes here
-    //- | {% for page in site.pages %}
-    //- | {% if page.title %}
-    //- a.page-link(href='{{ page.url | prepend: site.baseurl }}') {{ page.title }}
-    //- |           {% endif %}
-    //- |         {% endfor %}
-    -->
-  </nav>
-</div>

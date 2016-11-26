@@ -89,6 +89,18 @@ gulp.task('pug', () => {
   .pipe(gulp.dest('_includes'));
 });
 
+gulp.task('pug-layouts', () => {
+  return gulp.src([
+    '_layouts-pug/**/*.pug',
+    '!_site/node_modules/**'
+  ])
+  .pipe($.pug({
+			pretty: true
+		}))
+  .pipe(gulp.dest('_layouts'));
+});
+
+
 // Watch change in files.
 gulp.task('serve', ['jekyll-build'], () => {
   browserSync.init({
@@ -113,6 +125,7 @@ gulp.task('serve', ['jekyll-build'], () => {
 
   // Watch Pug (Jade) changes.
   gulp.watch('_includes-pug/**/*.pug', ['pug']);
+  gulp.watch('_layouts-pug/**/*.pug', ['pug-layouts']);
 
   // Watch scss changes.
   gulp.watch('scss/**/*.scss', ['scss']);

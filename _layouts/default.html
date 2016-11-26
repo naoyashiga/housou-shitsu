@@ -1,33 +1,24 @@
 <!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
+<html>{% include head.html %}
   <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      {% include header.html %}
-
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">{% include header.html %}
       <main class="mdl-layout__content">
-        <div class="page-content">
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col">
-              {{ content }}
-            </div>
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <div class="page-content">
+            <div class="mdl-grid">{{ content }}</div>
           </div>
-        </div>
-        {% include footer.html %}
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+          <div class="page-content">
+            <p>あああ</p>
+          </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+          <div class="page-content">
+            <!-- Your content goes here-->
+          </div>
+        </section>{% include footer.html %}
       </main>
     </div>
-
-
-  <link async href="{{ "/scripts/main.min.js" | prepend: site.baseurl }}">
-  <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("{{ "/sw.js" | prepend: site.baseurl }}").then(function() {
-      console.log("Service Worker Registered");
-    });
-  }
-  </script>
   </body>
-
 </html>
