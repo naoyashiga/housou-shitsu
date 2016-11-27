@@ -11,9 +11,7 @@ block content
           article
             | {{ content }}
         .mdl-card__actions.mdl-card--border
-          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored
-            | 詳細をみる
-          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
+          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(href='https://www.youtube.com/results?search_query=放送室+{{ page.youtube }}' target="_blank")
             | Youtubeで探す
         .mdl-card__actions.mdl-card--border
             | {% for tag in page.tags %}
