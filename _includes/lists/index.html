@@ -3,7 +3,11 @@
   <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
     <div class="mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title mdl-typography--headline">放送リスト</div>
-      <div class="mdl-card__supporting-text">ああ</div>
+      <div class="mdl-card__supporting-text">
+        <ul>{% for post in site.posts %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a>  {% endfor %}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

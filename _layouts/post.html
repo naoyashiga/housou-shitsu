@@ -1,11 +1,24 @@
-
----
-layout: default
----
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-  <article class="post-content">{{ content }}</article>
-</div>
+<!DOCTYPE html>
+<html>{% include head.html %}
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">{% include header.html %}
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <section class="mdl-grid">
+            <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
+              <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-typography--title">{{ page.title }}</div>
+                <div class="mdl-card__supporting-text">
+                  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                  <article>{{ content }}</article>
+                </div>
+                <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">詳細をみる</a><a class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Youtubeで探す</a></div>
+                <div class="mdl-card__actions mdl-card--border"></div>
+              </div>
+            </div>
+          </section>
+        </div>{% include footer.html %}
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,10 +1,22 @@
-| ---
-| layout: default
-| ---
-.post
-  header.post-header
-    h1.post-title {{ page.title }}
-    p.post-meta
-      | {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-  article.post-content
-    | {{ content }}
+extends mdlLayouts/base.pug
+
+block content
+  section.mdl-grid
+    .mdl-cell.mdl-cell--center.mdl-cell--9-col
+      .mdl-card.mdl-shadow--2dp
+        .mdl-card__title.mdl-typography--title {{ page.title }}
+        .mdl-card__supporting-text
+          p.post-meta
+            | {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+          article
+            | {{ content }}
+        .mdl-card__actions.mdl-card--border
+          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored
+            | 詳細をみる
+          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
+            | Youtubeで探す
+        .mdl-card__actions.mdl-card--border
+            //- | {% for post in site.posts %}
+            //- span.mdl-chip
+            //-   a.mdl-chip__text(href='#') 山崎
+            //-   |   {% endfor %}

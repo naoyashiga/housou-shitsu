@@ -2,7 +2,12 @@ section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
     .mdl-card.mdl-shadow--2dp
       .mdl-card__title.mdl-typography--headline 放送リスト
-      .mdl-card__supporting-text ああ
+      .mdl-card__supporting-text
+        ul
+          | {% for post in site.posts %}
+          li
+            a(href='{{ post.url }}') {{ post.title }}
+            |   {% endfor %}
 
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
