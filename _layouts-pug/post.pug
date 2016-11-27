@@ -16,7 +16,7 @@ block content
           a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
             | Youtubeで探す
         .mdl-card__actions.mdl-card--border
-            //- | {% for post in site.posts %}
-            //- span.mdl-chip
-            //-   a.mdl-chip__text(href='#') 山崎
-            //-   |   {% endfor %}
+            | {% for tag in page.tags %}
+            span.mdl-chip
+              a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
+            | {% endfor %}
