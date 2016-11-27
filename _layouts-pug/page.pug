@@ -1,11 +1,4 @@
-doctype html
-html
-  | {% include head.html %}
-  body
-    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-      | {% include header.html %}
+extends mdlLayouts/base.pug
 
-      main.mdl-layout__content
-        .page-content
-          | {{ content }}
-        | {% include footer.html %}
+block content
+  | {{ content }}
