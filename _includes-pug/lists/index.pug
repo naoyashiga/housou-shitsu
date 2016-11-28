@@ -24,9 +24,9 @@ section.mdl-grid
           | 詳細をみる
         a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent.hs-button(href='https://www.youtube.com/results?search_query=放送室+{{ post.youtube }}' target="_blank")
           | Youtubeで探す
-        .mdl-card__actions.mdl-card--border
-          | {% for tag in post.tags %}
-          span.mdl-chip.hs-chip
-            a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
-          | {% endfor %}
+      .mdl-card__actions.mdl-card--border
+        | {% for tag in post.tags %}
+        span.mdl-chip.hs-chip
+          a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
+        | {% endfor %}
 | {% endfor %}
