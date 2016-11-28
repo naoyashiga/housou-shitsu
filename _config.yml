@@ -13,14 +13,19 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+
 title: housou-shitsu
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://example.com" # the base hostname & protocol for your site
 twitter_username: naoyashiga
 github_username:  naoyashiga
+
+paginate: 10
+paginate_path: "lists/page:num"
 
 # Build settings
 markdown: kramdown
@@ -37,3 +42,5 @@ exclude: [
   "sass",
   "scss"
 ]
+
+gems: [jekyll-paginate]
