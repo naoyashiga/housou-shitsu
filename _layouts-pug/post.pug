@@ -24,8 +24,8 @@ block content
       .mdl-card.mdl-shadow--2dp
         .mdl-card__title.mdl-typography--title 挿入歌
         .mdl-card__supporting-text
-          h1.mdl-typography--title あぁエキセントリック少年ボウイ
-          h2.mdl-typography--body-1 エキセントリック少年ボウイオールスターズ
+          h1.mdl-typography--title {{ page.songName }}
+          h2.mdl-typography--body-1 {{ page.singer }}
 
         .mdl-card__actions.mdl-card--border
           a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(href='https://www.youtube.com/results?search_query={{ page.singer }}+{{ page.songName }}' target="_blank")
