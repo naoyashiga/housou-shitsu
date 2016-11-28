@@ -13,7 +13,7 @@
                   <article>{{ content }}</article>
                 </div>
                 <div class="mdl-card__actions mdl-card--border"><a class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.youtube.com/results?search_query=放送室+{{ page.youtube }}" target="_blank">Youtubeで探す</a></div>
-                <div class="mdl-card__actions mdl-card--border">{% for tag in page.tags %}<span class="mdl-chip"><a class="mdl-chip__text" href="/lists/tag/{{ tag | slugify }}">{{ tag }}</a></span>{% endfor %}</div>
+                <div class="mdl-card__actions mdl-card--border">{% for tag in page.tags %}<span class="mdl-chip hs-chip"><a class="mdl-chip__text" href="/lists/tag/{{ tag | slugify }}">{{ tag }}</a></span>{% endfor %}</div>
               </div>
             </div>
           </section>
