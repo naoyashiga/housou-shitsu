@@ -6,7 +6,12 @@
 }
 
 .mdl-grid {
-  margin-bottom: 48px;
+  margin-bottom: 24px;
+
+
+  &-post {
+    margin-top: 25px;
+  }
 }
 
 .mdl-cell {

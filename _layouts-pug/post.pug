@@ -1,13 +1,13 @@
 extends mdlLayouts/base.pug
 
 block content
-  section.mdl-grid
-    .mdl-cell.mdl-cell--center.mdl-cell--9-col
+  section.mdl-grid.mdl-grid-post
+    .mdl-cell.mdl-cell--center.mdl-cell--8-col
       .mdl-card.mdl-shadow--2dp
         .mdl-card__title.mdl-typography--title {{ page.title }}
         .mdl-card__supporting-text
           p.post-meta
-            | {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+            | {{ page.date | date: "%Y年%m月%-d日" }}
           article
             | {{ content }}
         .mdl-card__actions.mdl-card--border
@@ -18,3 +18,15 @@ block content
             span.mdl-chip
               a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
             | {% endfor %}
+
+  section.mdl-grid
+    .mdl-cell.mdl-cell--center.mdl-cell--8-col
+      .mdl-card.mdl-shadow--2dp
+        .mdl-card__title.mdl-typography--title 挿入歌
+        .mdl-card__supporting-text
+          h1.mdl-typography--title あぁエキセントリック少年ボウイ
+          h2.mdl-typography--body-1 エキセントリック少年ボウイオールスターズ
+
+        .mdl-card__actions.mdl-card--border
+          a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(href='https://www.youtube.com/results?search_query={{ page.singer }}+{{ page.songName }}' target="_blank")
+            | Youtubeで探す
