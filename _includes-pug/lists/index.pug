@@ -17,16 +17,32 @@ section.mdl-grid
         | {% endif %}
         | {% endfor %}
 
-| {% assign offset = 10 %}
-| {% for post in paginator.posts reversed %}
+| {% assign separateNum = 9 %}
+| {% assign limitIndex = separateNum %}
+| {% assign offsetIndex = 0 %}
+//- | {% for post in paginator.posts reversed %}
+| {% for i in (1..site.categories.archive.size) %}
 //- | {% for post in site.categories.archive reversed %}
-| {% assign loopindex = forloop.index | modulo: offset %}
+//- | {% assign minusIndex = forloop.index | minus: 1 %}
+| {% assign loopindex = forloop.index0 | modulo: separateNum %}
 | {% if loopindex == 0 %}
-| {% assign nextIndex = forloop.index | plus: offset %}
+
+| {% if forloop.index0 > 1 %}
+| {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
+p {{ offsetIndex }}
+
+| {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
+p {{ limitIndex }}
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
-    .mdl-typography--headline 放送リストvol.{{ forloop.index }}~{{ nextIndex }}
+    .mdl-typography--headline 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
+| {% else %}
+section.mdl-grid
+  .mdl-cell.mdl-cell--center.mdl-cell--9-col
+    .mdl-typography--headline 放送リストvol.1~{{ limitIndex }}
 | {% endif %}
+
+
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
     table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
@@ -35,9 +51,12 @@ section.mdl-grid
           th vol
           th タグ
       tbody
+        | {% for post in site.categories.archive reversed %}
+        
+        | {% if forloop.index >= offsetIndex and forloop.index <= limitIndex %}
         tr
           td
-            a(href='{{ post.url }}') vol.001
+            a(href='{{ post.url }}') {{ post.title }}
           td
             ul.hs-list
               | {% for tag in post.tags %}
@@ -45,31 +64,7 @@ section.mdl-grid
                 span.mdl-chip.hs-chip
                   a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
               | {% endfor %}
-              | {% for tag in post.tags %}
-              li.hs-list-item
-                span.mdl-chip.hs-chip
-                  a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
-              | {% endfor %}
-              | {% for tag in post.tags %}
-              li.hs-list-item
-                span.mdl-chip.hs-chip
-                  a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
-              | {% endfor %}
-        tr
-          td vol.002
-          td 50
-    .mdl-card.mdl-shadow--2dp
-      .mdl-card__title.mdl-typography--title {{ post.title }}
-      .mdl-card__supporting-text
-
-      .mdl-card__actions.mdl-card--border
-        a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored.hs-button(href='{{ post.url }}')
-          | 詳細をみる
-        a.mdl-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent.hs-button(href='https://www.youtube.com/results?search_query=放送室+{{ post.youtube }}' target="_blank")
-          | Youtubeで探す
-      .mdl-card__actions.mdl-card--border
-        | {% for tag in post.tags %}
-        span.mdl-chip.hs-chip
-          a.mdl-chip__text(href='/lists/tag/{{ tag | slugify }}') {{ tag }}
+        | {% endif %}
         | {% endfor %}
+| {% endif %}
 | {% endfor %}
