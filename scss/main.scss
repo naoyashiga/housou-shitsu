@@ -37,3 +37,11 @@
 .hs-button {
   margin: 0 3px;
 }
+
+.hs-list {
+
+  &-item {
+    float: left;
+    list-style-type: none;
+  }
+}
