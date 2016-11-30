@@ -9,7 +9,7 @@
         <section>
           <h1 class="mdl-typography--display-1" id="{{ tagName }}">{{ tagName }}</h1>
           <ul>{% for post in site.tags[tagName] %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
           </ul>
         </section>{% endfor %}
       </div>
