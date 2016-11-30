@@ -16,7 +16,7 @@ block content
         .mdl-card__actions.mdl-card--border
             | {% for tag in page.tags %}
             span.mdl-chip.hs-chip
-              a.mdl-chip__text(href='/tags/index.html#{{ tag | slugize }}') {{ tag }}
+              a.mdl-chip__text(href='{{ site.baseurl }}/tags/index.html#{{ tag | slugize }}') {{ tag }}
             | {% endfor %}
 
   section.mdl-grid

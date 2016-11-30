@@ -1,12 +1,12 @@
 
 <header class="mdl-layout__header">
-  <div class="mdl-layout__header-row"><a class="mdl-layout-title hs-header-title" href="/">放送室まとめ</a>
+  <div class="mdl-layout__header-row"><a class="mdl-layout-title hs-header-title" href="{{ site.baseurl }}">放送室まとめ</a>
     <div class="mdl-layout-spacer"></div>
-    <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="/lists/">放送リスト</a></nav>
+    <nav class="mdl-navigation mdl-layout--large-screen-only"><a class="mdl-navigation__link" href="{{ site.baseurl }}/lists/">放送リスト</a></nav>
   </div>
 </header>
-<div class="mdl-layout__drawer mdl-layout--small-screen-only"><a class="mdl-layout-title" href="/">放送室まとめ</a>
-  <nav class="mdl-navigation"><a class="mdl-navigation__link" href="/lists/">放送リスト</a>
+<div class="mdl-layout__drawer mdl-layout--small-screen-only"><a class="mdl-layout-title" href="{{ site.baseurl }}">放送室まとめ</a>
+  <nav class="mdl-navigation"><a class="mdl-navigation__link" href="{{ site.baseurl }}/lists/">放送リスト</a>
     {% assign separateNum = 9 %}
     {% assign limitIndex = separateNum %}
     {% assign offsetIndex = 0 %}
@@ -15,7 +15,7 @@
     {% if loopindex == 0 %}
     {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
     {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
-    {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}<a class="mdl-navigation__link" href="/lists#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a>{% elsif forloop.index0 == 0 %}<a class="mdl-navigation__link" href="/lists#vol1">放送リストvol.1~{{ limitIndex }}</a>
+    {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}<a class="mdl-navigation__link" href="{{ site.baseurl }}/lists#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a>{% elsif forloop.index0 == 0 %}<a class="mdl-navigation__link" href="{{ site.baseurl }}/lists#vol1">放送リストvol.1~{{ limitIndex }}</a>
     {% endif %}
     {% endif %}
     {% endfor %}
