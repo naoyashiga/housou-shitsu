@@ -16,11 +16,11 @@
 
 
 title: housou-shitsu
-email: your-email@domain.com
+email: naoyashiga0@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site
+baseurl: "/housou-shitsu" # the subpath of your site, e.g. /blog
+url: "https://naoyashiga.github.io" # the base hostname & protocol for your site
 twitter_username: naoyashiga
 github_username:  naoyashiga
 
