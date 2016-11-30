@@ -178,7 +178,9 @@ gulp.task('cleanup-gh-deploy', () => {
 // Depoly website to gh-pages.
 gulp.task('gh-pages', () => {
   return gulp.src('./_site/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages({
+      remoteUrl: "https://github.com/naoyashiga/housou-shitsu"
+    }));
 });
 
 gulp.task('deploy', () => {
