@@ -6,10 +6,13 @@
 }
 
 .mdl-grid {
-  margin-bottom: 24px;
-
+  margin-bottom: 15px;
 
   &-post {
+    margin-top: 25px;
+  }
+
+  &-marginTop {
     margin-top: 25px;
   }
 }
