@@ -15,7 +15,7 @@
     {% if loopindex == 0 %}
     {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
     {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
-    {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}<a class="mdl-navigation__link" href="#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a>{% elsif forloop.index0 == 0 %}<a class="mdl-navigation__link" href="/lists/#vol1">放送リストvol.1~{{ limitIndex }}</a>
+    {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}<a class="mdl-navigation__link" href="/lists#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a>{% elsif forloop.index0 == 0 %}<a class="mdl-navigation__link" href="/lists#vol1">放送リストvol.1~{{ limitIndex }}</a>
     {% endif %}
     {% endif %}
     {% endfor %}

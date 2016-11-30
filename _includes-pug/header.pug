@@ -9,9 +9,9 @@ mixin addInnerPageLinks
   | {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
   | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
   | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-  a.mdl-navigation__link(href="#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
+  a.mdl-navigation__link(href="/lists#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
   | {% elsif forloop.index0 == 0 %}
-  a.mdl-navigation__link(href='/lists/#vol1') 放送リストvol.1~{{ limitIndex }}
+  a.mdl-navigation__link(href='/lists#vol1') 放送リストvol.1~{{ limitIndex }}
   | {% endif %}
   | {% endif %}
   | {% endfor %}
