@@ -1,3 +1,21 @@
+mixin addInnerPageLinks
+  | {% assign separateNum = 9 %}
+  | {% assign limitIndex = separateNum %}
+  | {% assign offsetIndex = 0 %}
+  | {% for i in (1..site.categories.archive.size) %}
+  | {% assign loopindex = forloop.index0 | modulo: separateNum %}
+  | {% if loopindex == 0 %}
+
+  | {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+  | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
+  | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
+  a.mdl-navigation__link(href="#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
+  | {% elsif forloop.index0 == 0 %}
+  a.mdl-navigation__link(href='/lists/#vol1') 放送リストvol.1~{{ limitIndex }}
+  | {% endif %}
+  | {% endif %}
+  | {% endfor %}
+
 header.mdl-layout__header
   .mdl-layout__header-row
     a.mdl-layout-title.hs-header-title(href='/') 放送室まとめ
@@ -9,4 +27,4 @@ header.mdl-layout__header
   a.mdl-layout-title(href='/') 放送室まとめ
   nav.mdl-navigation
     a.mdl-navigation__link(href='/lists/') 放送リスト
-    //- a.mdl-navigation__link(href='') Link
+    +addInnerPageLinks
