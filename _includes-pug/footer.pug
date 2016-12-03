@@ -1,35 +1,12 @@
-mixin addInnerPageLinks
-  | {% assign separateNum = 9 %}
-  | {% assign limitIndex = separateNum %}
-  | {% assign offsetIndex = 0 %}
-  | {% for i in (1..site.categories.archive.size) %}
-  | {% assign loopindex = forloop.index0 | modulo: separateNum %}
-  | {% if loopindex == 0 %}
 
-  | {% if forloop.index0 == 351 %}
-  li
-    a(href="#vol390") 放送リストvol.390~391
-  | {% break %}
-  | {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
-  | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
-  | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-  li
-    a(href="#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
-  | {% elsif forloop.index0 == 0 %}
-  li
-    a(href="#vol1") 放送リストvol.1~{{ limitIndex }}
-  | {% endif %}
-  | {% endif %}
-  | {% endfor %}
 footer.mdl-mega-footer
   .mdl-mega-footer__middle-section
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
-      h1.mdl-mega-footer__heading バックナンバー
+      h1.mdl-mega-footer__heading 放送リスト
       ul.mdl-mega-footer__link-list
-        +addInnerPageLinks
+        | {% include footer/backnumberList.html %}
     .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
       h1.mdl-mega-footer__heading 企画
       ul.mdl-mega-footer__link-list
         li
@@ -37,13 +14,11 @@ footer.mdl-mega-footer
         li
           a(href='#') 武道館公開収録
     .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
       h1.mdl-mega-footer__heading 放送を探す
       ul.mdl-mega-footer__link-list
         li
           a(href='{{ site.baseurl }}/tags') タグリスト
     .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
       h1.mdl-mega-footer__heading Amazon
       ul.mdl-mega-footer__link-list
         li

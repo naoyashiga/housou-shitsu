@@ -3,29 +3,10 @@
   <div class="mdl-mega-footer__middle-section">
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked=""/>
-      <h1 class="mdl-mega-footer__heading">バックナンバー</h1>
-      <ul class="mdl-mega-footer__link-list">
-        {% assign separateNum = 9 %}
-        {% assign limitIndex = separateNum %}
-        {% assign offsetIndex = 0 %}
-        {% for i in (1..site.categories.archive.size) %}
-        {% assign loopindex = forloop.index0 | modulo: separateNum %}
-        {% if loopindex == 0 %}
-        {% if forloop.index0 == 351 %}
-        <li><a href="#vol390">放送リストvol.390~391</a></li>
-        {% break %}
-        {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
-        {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
-        {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-        <li><a href="#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
-        <li><a href="#vol1">放送リストvol.1~{{ limitIndex }}</a></li>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-      </ul>
+      <h1 class="mdl-mega-footer__heading">放送リスト</h1>
+      <ul class="mdl-mega-footer__link-list">{% include footer/backnumberList.html %}</ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked=""/>
       <h1 class="mdl-mega-footer__heading">企画</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="#">カプリチョーザ杯</a></li>
@@ -33,14 +14,12 @@
       </ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked=""/>
       <h1 class="mdl-mega-footer__heading">放送を探す</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="{{ site.baseurl }}/tags">タグリスト</a></li>
       </ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked=""/>
       <h1 class="mdl-mega-footer__heading">Amazon</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><a href="#">放送室のCD</a></li>
