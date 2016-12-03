@@ -11,7 +11,10 @@
           {% for i in (1..site.categories.archive.size) %}
           {% assign loopindex = forloop.index0 | modulo: separateNum %}
           {% if loopindex == 0 %}
-          {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+          {% if forloop.index0 == 351 %}
+          <li><a href="#vol390">放送リストvol.390~391</a></li>
+          {% break %}
+          {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
           {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
           {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
           <li><a href="#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
@@ -29,8 +32,16 @@
 {% assign offsetIndex = 0 %}
 {% for i in (1..site.categories.archive.size) %}
 {% assign loopindex = forloop.index0 | modulo: separateNum %}
-{% if loopindex == 0 %}
-{% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+{% if loopindex == 0 and forloop.index0 <= 351 %}
+{% if forloop.index0 == 351 %}
+<section class="mdl-grid">
+  <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
+    <div class="mdl-typography--headline" id="vol390">放送リストvol.390~391</div>
+  </div>
+</section>
+{% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
+{% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
+{% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
 {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
 {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
 <section class="mdl-grid">

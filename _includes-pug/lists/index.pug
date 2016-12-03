@@ -6,7 +6,11 @@ mixin addInnerPageLinks
   | {% assign loopindex = forloop.index0 | modulo: separateNum %}
   | {% if loopindex == 0 %}
 
-  | {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+  | {% if forloop.index0 == 351 %}
+  li
+    a(href="#vol390") 放送リストvol.390~391
+  | {% break %}
+  | {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
   | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
   | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
   li
@@ -31,12 +35,17 @@ section.mdl-grid.mdl-grid-marginTop
 //- | {% for post in paginator.posts reversed %}
 | {% for i in (1..site.categories.archive.size) %}
 | {% assign loopindex = forloop.index0 | modulo: separateNum %}
-| {% if loopindex == 0 %}
+| {% if loopindex == 0 and forloop.index0 <= 351 %}
 
-| {% if forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+| {% if forloop.index0 == 351 %}
+section.mdl-grid
+  .mdl-cell.mdl-cell--center.mdl-cell--9-col
+    .mdl-typography--headline(id="vol390") 放送リストvol.390~391
 | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
 | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-
+| {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
+| {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
+| {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
     .mdl-typography--headline(id="vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
@@ -44,8 +53,8 @@ section.mdl-grid
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
     .mdl-typography--headline(id="vol1") 放送リストvol.1~{{ limitIndex }}
-| {% endif %}
 
+| {% endif %}
 
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
