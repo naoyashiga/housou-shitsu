@@ -15,6 +15,20 @@ footer.mdl-mega-footer
       ul.mdl-mega-footer__link-list
         li
           a(href='{{ site.baseurl }}/tags') タグリスト
+        li
+          div
+            script.
+              (function() {
+                var cx = '001915134082396572127:t2nuaw3x31m';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            gcse:search
+
     .mdl-mega-footer__drop-down-section
       h1.mdl-mega-footer__heading 放送室グッズ紹介
       ul.mdl-mega-footer__link-list
