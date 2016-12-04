@@ -9,12 +9,7 @@ footer.mdl-mega-footer
     .mdl-mega-footer__drop-down-section
       h1.mdl-mega-footer__heading 企画
       ul.mdl-mega-footer__link-list
-        li
-          a(href='{{ site.baseurl }}/plannings#tellToMother') オカンに電話
-        li
-          a(href='{{ site.baseurl }}/plannings#budoukan') 放送室 in 武道館
-        li
-          a(href='{{ site.baseurl }}/plannings#capri') カプリチョーザ杯
+        | {% include footer/guest.html %}
     .mdl-mega-footer__drop-down-section
       h1.mdl-mega-footer__heading 放送を探す
       ul.mdl-mega-footer__link-list

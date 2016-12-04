@@ -28,6 +28,12 @@
   width: 100%;
 }
 
+.mdl-list__item {
+  &-leftMargin {
+    margin-left: 10px;
+  }
+}
+
 .hs-header-title {
   color: rgb(255,255,255);
   text-decoration: none;
