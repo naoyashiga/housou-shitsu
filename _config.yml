@@ -43,4 +43,7 @@ exclude: [
   "scss"
 ]
 
-gems: [jekyll-paginate, jekyll-sitemap, jekyll-feed]
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
