@@ -3,8 +3,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width" initial-scale="1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>{% feed_meta %}
+  <title>{% if page.title %}ラジオ松本人志の放送室 {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>{% feed_meta %}
   <meta name="description" content="{{ site.description }}"/>
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css"/>
   <script defer="" src="https://code.getmdl.io/1.2.1/material.min.js"></script>
