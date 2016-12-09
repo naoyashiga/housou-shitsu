@@ -1,7 +1,7 @@
 section.mdl-grid
   .mdl-cell.mdl-cell--center.mdl-cell--9-col
     .mdl-card.mdl-shadow--2dp
-      .mdl-card__title.mdl-typography--headline タグリスト
+      .mdl-card__title.mdl-typography--headline タグリスト一覧
       .mdl-card__supporting-text
         | {% for tag in site.tags %}
         | {% assign tagName = tag | first %}
@@ -9,7 +9,7 @@ section.mdl-grid
           h1.mdl-typography--display-1(id="{{ tagName }}") {{ tagName }}
           ul
             | {% for post in site.tags[tagName] %}
-            li
+            li.hs-list-tag-item
               a(href='{{ site.baseurl }}{{ post.url }}') {{ post.title }}
             | {% endfor %}
         | {% endfor %}

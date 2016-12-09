@@ -59,4 +59,9 @@
     float: left;
     list-style-type: none;
   }
+
+  &-tag-item {
+    display: inline-block;
+    margin: 10px 5px;
+  }
 }
