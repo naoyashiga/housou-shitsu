@@ -12,13 +12,13 @@
           {% assign loopindex = forloop.index0 | modulo: separateNum %}
           {% if loopindex == 0 %}
           {% if forloop.index0 == 351 %}
-          <li><a href="#vol390" name="vol390">放送リストvol.390~391</a></li>
+          <li><a href="#vol390">放送リストvol.390~391</a></li>
           {% break %}
           {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
           {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
           {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-          <li><a href="#vol{{ offsetIndex }}" name="vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
-          <li><a href="#vol1" name="vol1">放送リストvol.1~{{ limitIndex }}</a></li>
+          <li><a href="#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
+          <li><a href="#vol1">放送リストvol.1~{{ limitIndex }}</a></li>
           {% endif %}
           {% endif %}
           {% endfor %}
@@ -36,7 +36,7 @@
 {% if forloop.index0 == 351 %}
 <section class="mdl-grid">
   <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
-    <div class="mdl-typography--headline" id="vol390">放送リストvol.390~391</div>
+    <div class="mdl-typography--headline" id="vol390" name="vol390">放送リストvol.390~391</div>
   </div>
 </section>
 {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
@@ -46,12 +46,12 @@
 {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
 <section class="mdl-grid">
   <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
-    <div class="mdl-typography--headline" id="vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</div>
+    <div class="mdl-typography--headline" id="vol{{ offsetIndex }}" name="vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</div>
   </div>
 </section>{% elsif forloop.index0 == 0 %}
 <section class="mdl-grid">
   <div class="mdl-cell mdl-cell--center mdl-cell--9-col">
-    <div class="mdl-typography--headline" id="vol1">放送リストvol.1~{{ limitIndex }}</div>
+    <div class="mdl-typography--headline" id="vol1" name="vol1">放送リストvol.1~{{ limitIndex }}</div>
   </div>
 </section>{% endif %}
 <section class="mdl-grid">
