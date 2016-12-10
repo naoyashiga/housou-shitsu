@@ -7,14 +7,14 @@ mixin addInnerPageLinks
   | {% if loopindex == 0 %}
 
   | {% if forloop.index0 == 351 %}
-  a.mdl-navigation__link(href='{{ site.baseurl }}/lists#vol390') 放送リストvol.390~391
+  a.mdl-navigation__link(href='{{ site.baseurl }}/lists/index.html#vol390') 放送リストvol.390~391
   | {% break %}
   | {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
   | {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
   | {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-  a.mdl-navigation__link(href="{{ site.baseurl }}/lists#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
+  a.mdl-navigation__link(href="{{ site.baseurl }}/lists/index.html#vol{{ offsetIndex }}") 放送リストvol.{{ offsetIndex }}~{{ limitIndex }}
   | {% elsif forloop.index0 == 0 %}
-  a.mdl-navigation__link(href='{{ site.baseurl }}/lists#vol1') 放送リストvol.1~{{ limitIndex }}
+  a.mdl-navigation__link(href='{{ site.baseurl }}/lists/index.html#vol1') 放送リストvol.1~{{ limitIndex }}
   | {% endif %}
   | {% endif %}
   | {% endfor %}

@@ -6,13 +6,13 @@
 {% assign loopindex = forloop.index0 | modulo: separateNum %}
 {% if loopindex == 0 %}
 {% if forloop.index0 == 351 %}
-<li><a href="{{ site.baseurl }}/lists#vol390">放送リストvol.390~391</a></li>
+<li><a href="{{ site.baseurl }}/lists/index.html#vol390">放送リストvol.390~391</a></li>
 {% break %}
 {% elsif forloop.index0 > 1 and limitIndex < site.categories.archive.size %}
 {% assign offsetIndex = offsetIndex | plus: separateNum | plus: 1 %}
 {% assign limitIndex = limitIndex | plus: separateNum | plus: 1 %}
-<li><a href="{{ site.baseurl }}/lists#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
-<li><a href="{{ site.baseurl }}/lists#vol1">放送リストvol.1~{{ limitIndex }}</a></li>
+<li><a href="{{ site.baseurl }}/lists/index.html#vol{{ offsetIndex }}">放送リストvol.{{ offsetIndex }}~{{ limitIndex }}</a></li>{% elsif forloop.index0 == 0 %}
+<li><a href="{{ site.baseurl }}/lists/index.html#vol1">放送リストvol.1~{{ limitIndex }}</a></li>
 {% endif %}
 {% endif %}
 {% endfor %}
