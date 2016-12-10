@@ -7,7 +7,7 @@
         {% for tag in site.tags %}
         {% assign tagName = tag | first %}
         <section>
-          <h1 class="mdl-typography--display-1" id="{{ tagName }}">{{ tagName }}</h1>
+          <h1 class="mdl-typography--display-1" id="{{ tagName }}" name="{{ tagName }}">{{ tagName }}</h1>
           <ul>{% for post in site.tags[tagName] %}
             <li class="hs-list-tag-item"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
           </ul>

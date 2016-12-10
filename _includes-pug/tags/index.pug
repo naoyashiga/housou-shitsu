@@ -6,7 +6,8 @@ section.mdl-grid
         | {% for tag in site.tags %}
         | {% assign tagName = tag | first %}
         section
-          h1.mdl-typography--display-1(id="{{ tagName }}") {{ tagName }}
+          
+          h1.mdl-typography--display-1(id="{{ tagName }}" name="{{ tagName }}") {{ tagName }}
           ul
             | {% for post in site.tags[tagName] %}
             li.hs-list-tag-item
