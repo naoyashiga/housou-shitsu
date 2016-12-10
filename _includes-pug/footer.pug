@@ -3,40 +3,39 @@ footer.mdl-mega-footer
   .mdl-mega-footer__middle-section
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
-      h1.mdl-mega-footer__heading 放送リスト
-      ul.mdl-mega-footer__link-list
+      h1.mdl-mega-footer__heading.hs-mega-footer__heading  放送リスト
+      ul.mdl-mega-footer__link-list.hs-mega-footer__link-list
         | {% include footer/backnumberList.html %}
     .mdl-mega-footer__drop-down-section
-      h1.mdl-mega-footer__heading 企画
-      ul.mdl-mega-footer__link-list
+      h1.mdl-mega-footer__heading.hs-mega-footer__heading  企画
+      ul.mdl-mega-footer__link-list.hs-mega-footer__link-list
         | {% include footer/guest.html %}
     .mdl-mega-footer__drop-down-section
-      h1.mdl-mega-footer__heading 放送を探す
-      ul.mdl-mega-footer__link-list
+      h1.mdl-mega-footer__heading.hs-mega-footer__heading  放送を探す
+      ul.mdl-mega-footer__link-list.hs-mega-footer__link-list
         li
           a(href='{{ site.baseurl }}/tags') タグリスト
-        li
-          div
-            script.
-              (function() {
-                var cx = '001915134082396572127:t2nuaw3x31m';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-              })();
-            gcse:searchbox-only
+        div
+          script.
+            (function() {
+              var cx = '001915134082396572127:t2nuaw3x31m';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          gcse:searchbox-only
 
     .mdl-mega-footer__drop-down-section
-      h1.mdl-mega-footer__heading 放送室グッズ紹介
-      ul.mdl-mega-footer__link-list
+      h1.mdl-mega-footer__heading.hs-mega-footer__heading  放送室グッズ紹介
+      ul.mdl-mega-footer__link-list.hs-mega-footer__link-list
         li
           a(href='{{ site.baseurl }}/products') 放送室のCDや本
   .mdl-mega-footer__bottom-section
     .mdl-mega-footer__drop-down-section
-      h1.mdl-mega-footer__heading 放送室まとめについて
+      h1.mdl-mega-footer__heading.hs-mega-footer__heading  放送室まとめについて
       p このページはファンが作った「放送室」のまとめサイトです。非公式です。
 script.
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

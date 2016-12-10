@@ -3,45 +3,43 @@
   <div class="mdl-mega-footer__middle-section">
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked=""/>
-      <h1 class="mdl-mega-footer__heading">放送リスト</h1>
-      <ul class="mdl-mega-footer__link-list">{% include footer/backnumberList.html %}</ul>
+      <h1 class="mdl-mega-footer__heading hs-mega-footer__heading"> 放送リスト</h1>
+      <ul class="mdl-mega-footer__link-list hs-mega-footer__link-list">{% include footer/backnumberList.html %}</ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <h1 class="mdl-mega-footer__heading">企画</h1>
-      <ul class="mdl-mega-footer__link-list">{% include footer/guest.html %}</ul>
+      <h1 class="mdl-mega-footer__heading hs-mega-footer__heading"> 企画</h1>
+      <ul class="mdl-mega-footer__link-list hs-mega-footer__link-list">{% include footer/guest.html %}</ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <h1 class="mdl-mega-footer__heading">放送を探す</h1>
-      <ul class="mdl-mega-footer__link-list">
+      <h1 class="mdl-mega-footer__heading hs-mega-footer__heading"> 放送を探す</h1>
+      <ul class="mdl-mega-footer__link-list hs-mega-footer__link-list">
         <li><a href="{{ site.baseurl }}/tags">タグリスト</a></li>
-        <li>
-          <div>
-            <script>
-              (function() {
-                var cx = '001915134082396572127:t2nuaw3x31m';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-              })();
-            </script>
-            <gcse:searchbox-only></gcse:searchbox-only>
-          </div>
-        </li>
+        <div>
+          <script>
+            (function() {
+              var cx = '001915134082396572127:t2nuaw3x31m';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:searchbox-only></gcse:searchbox-only>
+        </div>
       </ul>
     </div>
     <div class="mdl-mega-footer__drop-down-section">
-      <h1 class="mdl-mega-footer__heading">放送室グッズ紹介</h1>
-      <ul class="mdl-mega-footer__link-list">
+      <h1 class="mdl-mega-footer__heading hs-mega-footer__heading"> 放送室グッズ紹介</h1>
+      <ul class="mdl-mega-footer__link-list hs-mega-footer__link-list">
         <li><a href="{{ site.baseurl }}/products">放送室のCDや本</a></li>
       </ul>
     </div>
   </div>
   <div class="mdl-mega-footer__bottom-section">
     <div class="mdl-mega-footer__drop-down-section">
-      <h1 class="mdl-mega-footer__heading">放送室まとめについて</h1>
+      <h1 class="mdl-mega-footer__heading hs-mega-footer__heading"> 放送室まとめについて</h1>
       <p>このページはファンが作った「放送室」のまとめサイトです。非公式です。</p>
     </div>
   </div>
