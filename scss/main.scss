@@ -26,6 +26,15 @@
 
 .mdl-card {
   width: 100%;
+
+  article {
+    h1 {
+      font-size: 30px;
+      line-height: 1.35;
+      letter-spacing: -.02em;
+      margin: 24px 0;
+    }
+  }
 }
 
 .mdl-list__item {
