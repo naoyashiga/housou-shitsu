@@ -19,7 +19,7 @@ title: ラジオ松本人志の放送室・非公式まとめ
 email: naoyashiga0@gmail.com
 description: ラジオ松本人志の放送室・非公式まとめです。「放送室」は、松本人志と放送作家の高須光聖によるラジオ番組です。
 
-baseurl: "/housou-shitsu" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://naoyashiga.github.io" # the base hostname & protocol for your site
 twitter_username: naoyashiga
 github_username:  naoyashiga
