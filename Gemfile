@@ -14,6 +14,7 @@ gem "jekyll", "3.3.1"
 gem "jekyll-paginate"
 gem 'jekyll-sitemap'
 gem 'jekyll-feed'
+gem 'jekyll-redirect-from'
 
 
 
